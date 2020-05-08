@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.liu.commodity</groupId>
+  <artifactId>maven03_commodity</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <!-- 排除依赖自动添加的日志包 -->
+  <properties>
+     <myversion>4.2.6.RELEASE</myversion>
+  </properties>
+  <!-- 子工程中声明父工程 -->
+  <parent>
+      <groupId>com.liu.maven</groupId>
+      <artifactId>parent</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+    <!-- 以当前文件为基准的父工程pomxml的相对路径 -->
+    <relativePath>../parent/pom.xml</relativePath>
+  </parent>
+  
+  <dependencies>
+<!--  <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>compile</scope>
+     </dependency>  -->
+     <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-core</artifactId>
+        <version>${myversion}</version>
+        <scope>compile</scope>
+         <!-- 排除依赖自动添加的日志包 -->
+     <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions> 
+       <!--      <optional>true</optional> -->
+      </dependency>
+     <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>4.3.19.RELEASE</version>
+    </dependency>
+      
+    
+      
+  
+  </dependencies>
+</project>
